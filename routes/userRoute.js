@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 // Gets one users
 router.get("/:id", (req, res) => {
   try {
-    con.query("SELECT * FROM users WHERE user_id ${}", (err, result) => {
+    con.query(`SELECT * FROM users WHERE user_id = ${req.params.id}`, (err, result) => {
       if (err) throw err;
       res.send(result);
     });
