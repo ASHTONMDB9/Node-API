@@ -60,7 +60,7 @@ router.get("/", (req, res) => {
       }
     });
     
-    // Delete one users
+    // Delete one categorys
     router.delete("/:id", (req, res) => {
         try {
           con.query(`DELETE FROM categories WHERE category_id = ${req.params.id}`, (err, result) => {
@@ -68,6 +68,32 @@ router.get("/", (req, res) => {
             res.send("Sucessfully deleted this category");
           });
           // res.send({ id: req.params.id });
+        } catch (error) {
+          console.log(error);
+          res.status(400).send(error);
+        }
+      });
+
+
+      router.put("/:id", (req, res) => {
+        // the below allows you to only need one const, but every input required is inside of the brackets
+        const {
+          name,
+          description,
+          thumbnail,
+        } = req.body;
+        // OR
+        // the below requires you to add everything one by one
+        //   const email = req.body.email;
+        try {
+          con.query(
+            //When using the ${}, the content of con.query MUST be in the back tick
+            `UPDATE categories set name="${name}", description="${description}", thumbnail="${thumbnail}" WHERE category_id = "${req.params.id}"`,
+            (err, result) => {
+              if (err) throw err;
+              res.send("category successfully updated");
+            }
+          );
         } catch (error) {
           console.log(error);
           res.status(400).send(error);
