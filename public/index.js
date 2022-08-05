@@ -63,7 +63,7 @@ function showProducts(products) {
     <h4 id="pr">Price: ${product.price}</h4><br>
   </div>
     </div>
-    </div> 
+    </div>
     </div>
     `;
   });
