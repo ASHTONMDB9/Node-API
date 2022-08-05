@@ -86,5 +86,7 @@ async function Login(e) {
   const data = await response.json();
 
   console.log(data)
-  return data
+  localStorage.setItem('token',JSON.stringify(data.token))
+  location.href = "https://node-1api.herokuapp.com/Products.html"
+  
 }
