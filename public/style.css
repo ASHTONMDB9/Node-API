@@ -1,0 +1,57 @@
+body {
+    background-image:url("https://i.postimg.cc/Vsb0bTmF/wallpaperflare-com-wallpaper.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#title {
+    color: white;
+}
+#prodimg:hover {
+    transform: scale(1.1);
+    transition: all 0.5s linear;
+  }
+.container-fluid {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.container-fluid form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container-fluid form input {
+    height: 40px;
+    background-color: white;
+    padding: 5px 0px;
+    border: 0;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+    color: black;
+}
+.container-fluid form input::-webkit-input-placeholder {
+    color: black;
+    text-transform: capitalize;
+}
+.container-fluid form [name="password"],
+.container-fluid form [name="email"] {
+    width: 31%;
+}
+.container-fluid form input {
+    outline: none;
+}
+.container-fluid form button {
+    background-color: white;
+    padding: 10px 0;
+    width: 100%;
+    border: 1px solid black;
+    color: black;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.container-fluid form button:hover {
+    color: black;
+    border-color: black;
+    box-shadow: 0 0 20px black;
+}

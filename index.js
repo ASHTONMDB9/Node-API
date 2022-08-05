@@ -9,7 +9,10 @@ app.set("port", process.env.PORT || 6969); // Set the port
 app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
 
+app.use(express.static('public')); 
 
+//Serves all the request which includes /images in the url from Images folder 
+app.use('/index.html', express.static(__dirname + '/index.html'));
 
 
 app.get("/", (req, res) => {
@@ -30,3 +33,4 @@ app.listen(app.get("port"), () => {
     console.log("Press Ctrl+C to exit server");
 });
 
+ 

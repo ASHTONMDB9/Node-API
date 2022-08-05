@@ -10,11 +10,11 @@ router.get("/", (req, res) => {
   try {
     con.query("SELECT * FROM users", (err, result) => {
       if (err) throw err;
-      res.send(result);
+      res.json(result);
     });
   } catch (error) {
     console.log(error);
-    res.status(400).send(error);
+    res.status(400).json(error);
   }
 });
 // Gets one users
@@ -200,6 +200,7 @@ router.delete("/:id", (req, res) => {
                   (err, token) => {
                     if (err) throw err;
                     res.json({ token });
+                    console.log(req.body);
                   }
                 );
               }
@@ -238,6 +239,10 @@ router.get("/users/verify", (req, res) => {
       console.log(error);
     }
   });
+
+
+
+  
 
 
 module.exports = router;

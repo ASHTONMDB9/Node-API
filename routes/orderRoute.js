@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
         });
         // res.send({ id: req.params.id });
       } catch (error) {
-        console.log(error);
+        console.log(error); 
         res.status(400).send(error);
       }
     });
@@ -58,7 +58,7 @@ router.get("/", (req, res) => {
             if (err) throw err;
             res.send("order successfully created");
           }
-        );
+        ); 
       } catch (error) {
         console.log(error);
         res.status(400).send(error);
